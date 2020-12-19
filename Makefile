@@ -1,6 +1,17 @@
 export AWS_DEFAULT_REGION=us-east-2
 
+# open shell at $PWD in dockerized environment
+
+shell:
+	./scripts/docker_shell.sh
+
 # vpc with a private subnet
+
+init: vpc-init
+
+apply: vpc-apply
+
+destroy: vpc-destroy
 
 vpc-init:
 	cd tf/vpc/; terraform init;
